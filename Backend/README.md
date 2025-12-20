@@ -363,8 +363,8 @@ GET /maps/get-suggestions?input=1600+Amphitheatre
 ```json
 {
   "predictions": [
-    "1600 Amphitheatre Parkway, Mountain View, CA, USA",
-    "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA"
+    "Jaydev Vihar, Bhubaneswar, Odisha, India",
+    "Kankarbagh, Patna, Bihar, India"
   ]
 }
 ```
