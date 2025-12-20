@@ -188,9 +188,9 @@ The request body should be in JSON format and include the following fields:
   "captain": {
     "fullname": {
       "firstname": "Shani",
-      "lastname": ""
+      "lastname": "Rout"
     },
-    "email": "shani@example.com",
+    "email": "shani.rout@example.com",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
   }
 }
@@ -217,10 +217,10 @@ Requires a valid JWT token in the Authorization header:
 {
   "captain": {
     "fullname": {
-      "firstname": "Apoorv",
-      "lastname": "Bajpai"
+      "firstname": "Abhishek",
+      "lastname": "Samal"
     },
-    "email": "apoorv.bajpai@example.com",
+    "email": "abhishek.samal@example.com",
     "vehicle": {
       "color": "Blue",
       "plate": "XYZ789",
