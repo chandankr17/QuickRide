@@ -22,13 +22,18 @@ The request body should be in JSON format and include the following fields:
 
 ### Example Response
 
-- `user` (object):
-  - `fullname` (object).
-    - `firstname` (string): User's first name (minimum 3 characters).
-    - `lastname` (string): User's last name (minimum 3 characters).   
-  - `email` (string): User's email address (must be a valid email).
-  - `password` (string): User's password (minimum 6 characters).
-- `token` (String): JWT Token
+```json
+{
+  "user": {
+    "fullname": {
+      "firstname": "Chandan",
+      "lastname": "Kumar"
+    },
+    "email": "chandan.kumar@example.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+}
+```
 
 ## `/users/login` Endpoint
 
@@ -40,10 +45,6 @@ Authenticates a user using their email and password, returning a JWT token upon 
 
 `POST`
 
-### Endpoint
-
-`/users/login`
-
 ### Request Body
 
 The request body should be in JSON format and include the following fields:
@@ -53,13 +54,18 @@ The request body should be in JSON format and include the following fields:
 
 ### Example Response
 
-- `user` (object):
-  - `fullname` (object).
-    - `firstname` (string): User's first name (minimum 3 characters).
-    - `lastname` (string): User's last name (minimum 3 characters).   
-  - `email` (string): User's email address (must be a valid email).
-  - `password` (string): User's password (minimum 6 characters).
-- `token` (String): JWT Token
+```json
+{
+  "user": {
+    "fullname": {
+      "firstname": "Ram",
+      "lastname": "Kante"
+    },
+    "email": "ram.kante@example.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+}
+```
 
 ## `/users/profile` Endpoint
 
@@ -78,19 +84,23 @@ Requires a valid JWT token in the Authorization header:
 
 ### Example Response
 
-- `user` (object):
-  - `fullname` (object).
-    - `firstname` (string): User's first name (minimum 3 characters).
-    - `lastname` (string): User's last name (minimum 3 characters).   
-  - `email` (string): User's email address (must be a valid email).
-
-
+```json
+{
+  "user": {
+    "fullname": {
+      "firstname": "Janmenjay",
+      "lastname": "Panni"
+    },
+    "email": "janmenjay.panni@example.com"
+  }
+}
+```
 
 ## `/users/logout` Endpoint
 
 ### Description
 
-Logout the current user and blacklist the token provided in cookie or headers
+Logout the current user and blacklist the token provided in cookie or headers.
 
 ### HTTP Method
 
@@ -98,15 +108,15 @@ Logout the current user and blacklist the token provided in cookie or headers
 
 ### Authentication
 
-Requires a valid JWT token in the Authorization header or cookie:
+Requires a valid JWT token in the Authorization header or cookie.
 
-- `user` (object):
-  - `fullname` (object).
-    - `firstname` (string): User's first name (minimum 3 characters).
-    - `lastname` (string): User's last name (minimum 3 characters).   
-  - `email` (string): User's email address (must be a valid email).
-  - `password` (string): User's password (minimum 6 characters).
-- `token` (String): JWT Token
+### Example Response
+
+```json
+{
+  "message": "Logout successfully"
+}
+```
 
 ## `/captains/register` Endpoint
 
@@ -139,13 +149,13 @@ The request body should be in JSON format and include the following fields:
 {
   "captain": {
     "fullname": {
-      "firstname": "John",
-      "lastname": "Doe"
+      "firstname": "Apoorv",
+      "lastname": "Bajpai"
     },
-    "email": "john.doe@example.com",
+    "email": "apoorv.bajpai@example.com",
     "vehicle": {
-      "color": "Red",
-      "plate": "ABC123",
+      "color": "Blue",
+      "plate": "XYZ789",
       "capacity": 4,
       "vehicleType": "car"
     },
@@ -164,10 +174,6 @@ Authenticates a captain using their email and password, returning a JWT token up
 
 `POST`
 
-### Endpoint
-
-`/captains/login`
-
 ### Request Body
 
 The request body should be in JSON format and include the following fields:
@@ -177,18 +183,18 @@ The request body should be in JSON format and include the following fields:
 
 ### Example Response
 
-- `captain` (object):
-  - `fullname` (object).
-    - `firstname` (string): Captain's first name (minimum 3 characters).
-    - `lastname` (string): Captain's last name (minimum 3 characters).   
-  - `email` (string): Captain's email address (must be a valid email).
-  - `password` (string): Captain's password (minimum 6 characters).
-  - `vehicle` (object):
-    - `color` (string): Vehicle color.
-    - `plate` (string): Vehicle plate number.
-    - `capacity` (number): Vehicle passenger capacity.
-    - `vehicleType` (string): Type of vehicle.
-- `token` (String): JWT Token
+```json
+{
+  "captain": {
+    "fullname": {
+      "firstname": "Shani",
+      "lastname": ""
+    },
+    "email": "shani@example.com",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
+}
+```
 
 ## `/captains/profile` Endpoint
 
@@ -207,16 +213,23 @@ Requires a valid JWT token in the Authorization header:
 
 ### Example Response
 
-- `captain` (object):
-  - `fullname` (object).
-    - `firstname` (string): Captain's first name (minimum 3 characters).
-    - `lastname` (string): Captain's last name (minimum 3 characters).   
-  - `email` (string): Captain's email address (must be a valid email).
-  - `vehicle` (object):
-    - `color` (string): Vehicle color.
-    - `plate` (string): Vehicle plate number.
-    - `capacity` (number): Vehicle passenger capacity.
-    - `vehicleType` (string): Type of vehicle.
+```json
+{
+  "captain": {
+    "fullname": {
+      "firstname": "Apoorv",
+      "lastname": "Bajpai"
+    },
+    "email": "apoorv.bajpai@example.com",
+    "vehicle": {
+      "color": "Blue",
+      "plate": "XYZ789",
+      "capacity": 4,
+      "vehicleType": "car"
+    }
+  }
+}
+```
 
 ## `/captains/logout` Endpoint
 
@@ -234,8 +247,11 @@ Requires a valid JWT token in the Authorization header or cookie.
 
 ### Example Response
 
-- `message` (string): Logout successfully.
-
+```json
+{
+  "message": "Logout successfully"
+}
+```
 
 ## `/maps/get-coordinates` Endpoint
 
