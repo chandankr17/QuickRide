@@ -26,9 +26,7 @@ const CaptainProtectWrapper = ({
                 setCaptain(response.data.captain)
                 setIsLoading(false)
             }
-        })
-            .catch(err => {
-
+        }).catch(err => {
                 localStorage.removeItem('token')
                 navigate('/captain-login')
             })
@@ -39,7 +37,7 @@ const CaptainProtectWrapper = ({
             <div>Loading...</div>
         )
     }
-    
+
     return (
         <>
             {children}
