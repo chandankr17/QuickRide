@@ -26,7 +26,6 @@ const ConfirmRidePopUp = (props) => {
             navigate('/captain-riding', { state: { ride: props.ride } })
         }
 
-
     }
     return (
         <div>
